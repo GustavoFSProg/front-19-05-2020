@@ -42,8 +42,16 @@ export default function Header() {
                 Products
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem>Listagem </DropdownItem>
-                <DropdownItem>Cadastro</DropdownItem>
+                <DropdownItem>
+                  <NavLink href="/products">
+                    <span className="fontes">Listagem</span>
+                  </NavLink>
+                </DropdownItem>
+                <DropdownItem>
+                  <NavLink href="/register">
+                    {'    '} <span className="fontes"> {'    '}Cadastro</span>
+                  </NavLink>
+                </DropdownItem>
                 <DropdownItem divider />
               </DropdownMenu>
             </UncontrolledDropdown>
