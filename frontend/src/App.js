@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './Header'
-import Formulary from './Form'
 import './style.css'
+import Register from '../src/pages/register'
 
 function App() {
   return (
@@ -18,10 +18,12 @@ function App() {
           </div>
         </div>
         <br />
-        <div className="row">
-          <div className="col-md-3"></div>
-          <div className="col-md-5">
-            <Formulary />
+        <div className="container">
+          <div className="row">
+            <div className="col-md-3"></div>
+            <div className="col-md-5">
+              <Register />
+            </div>
           </div>
         </div>
       </div>
