@@ -1,4 +1,7 @@
 import axios from 'axios'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 axios.defaults.baseURL = 'http://localhost:4000/'
 axios.interceptors.request.use(

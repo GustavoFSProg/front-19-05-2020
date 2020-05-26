@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './style.css'
 import {
   Collapse,
@@ -27,16 +28,13 @@ export default function Header() {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="https://celke.com.br/">
+              <NavLink href="/">
                 <text className="yellow-color">Home</text>
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink
-                className="yellow-color"
-                href="https://github.com/reactstrap/reactstrap"
-              >
-                Cadatro
+              <NavLink href="/register">
+                <text className="yellow-color">Cadastro</text>
               </NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
@@ -44,10 +42,17 @@ export default function Header() {
                 Products
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem>Teste 1 </DropdownItem>
-                <DropdownItem>Option 2</DropdownItem>
+                <DropdownItem>
+                  <NavLink href="/products">
+                    <span className="fontes">Listagem</span>
+                  </NavLink>
+                </DropdownItem>
+                <DropdownItem>
+                  <NavLink href="/register">
+                    {'    '} <span className="fontes"> {'    '}Cadastro</span>
+                  </NavLink>
+                </DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem>Reset</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
