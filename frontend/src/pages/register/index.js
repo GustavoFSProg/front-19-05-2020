@@ -74,6 +74,13 @@ export default function Register() {
                 />
               </FormGroup>{' '}
               <br />
+              <FormGroup>
+                <Input
+                  type="submit"
+                  className="btn-primary"
+                  value="Cadastrar"
+                />
+              </FormGroup>
             </Form>
           </div>
         </div>
