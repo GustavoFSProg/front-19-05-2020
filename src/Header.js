@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import './style.css'
 import {
   Collapse,
@@ -7,6 +7,7 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
+  NavLink,
   NavItem,
   UncontrolledDropdown,
   DropdownToggle,
@@ -23,19 +24,24 @@ export default function Header() {
   return (
     <div>
       <Navbar className="green-color" dark expand="md">
-        <NavbarBrand onClick={() => history.push('/')}>GFS</NavbarBrand>
+        <NavbarBrand className="NavLink" onClick={() => history.push('/')}>
+          GFS
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <div onClick={() => history.push('/')}>
+              <NavLink className="NavLink" onClick={() => history.push('/')}>
                 <text className="yellow-color">Home</text>
-              </div>
+              </NavLink>
             </NavItem>
             <NavItem>
-              <div onClick={() => history.push('/register')}>
+              <NavLink
+                className="NavLink"
+                onClick={() => history.push('/register')}
+              >
                 <text className="yellow-color">Cadastro</text>
-              </div>
+              </NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle className="yellow-color" nav caret>
@@ -43,14 +49,20 @@ export default function Header() {
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
-                  <div onClick={() => history.push('/products')}>
+                  <NavLink
+                    className="NavLink"
+                    onClick={() => history.push('/products')}
+                  >
                     <span className="fontes">Listagem</span>
-                  </div>
+                  </NavLink>
                 </DropdownItem>
                 <DropdownItem>
-                  <div onClick={() => history.push('/register')}>
+                  <NavLink
+                    className="NavLink"
+                    onClick={() => history.push('/register')}
+                  >
                     <span className="fontes">Cadastro</span>
-                  </div>
+                  </NavLink>
                 </DropdownItem>
                 <DropdownItem divider />
               </DropdownMenu>

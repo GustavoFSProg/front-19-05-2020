@@ -14,3 +14,7 @@
 .fontes {
   color: black;
 }
+
+.NavLink {
+  cursor: pointer;
+}
