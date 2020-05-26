@@ -1,6 +1,9 @@
-import React, { useState, useHistory } from 'react'
+/* eslint-disable no-alert */
+import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
+
 import '../../style.css'
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap'
 import api from '../../services/api'
 import Header from '../../Header'
 
@@ -9,13 +12,16 @@ export default function Register() {
   const [description, setDescription] = useState('')
   const [price, setPrice] = useState('')
   const [slug, setSlug] = useState('')
+  const { push } = useHistory()
 
-  async function Formulario() {
+  async function formulario(e) {
+    e.preventDefault()
     const data = { title, description, price, slug }
     try {
       await api.post('/products', data)
 
       alert('Deu certo product cadastrado')
+      push('/')
     } catch (error) {
       alert('ERRO product não cadastrado')
     }
@@ -28,19 +34,20 @@ export default function Register() {
         <div className="row">
           <div className="col-md-3"> </div>
           <div className="col-md-6">
-            <br /> <br />
+            <br />
+            <br />
             <div align="center">
-              <h1 className="titulo">Cadastro de Produtos</h1>{' '}
+              <h1 className="titulo">Cadastro de Produtos</h1>
             </div>
-            <br /> <br />
-            <Form onSubmit={Formulario}>
+            <br />
+            <br />
+            <Form onSubmit={formulario}>
               <FormGroup>
                 <Label for="exampleEmail">Titulo: </Label>
                 <Input
                   type="text"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
-                  id="exampleEmail"
                   placeholder="Titulo"
                 />
               </FormGroup>
@@ -59,7 +66,6 @@ export default function Register() {
                   type="text"
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
-                  id="exampleEmail"
                   placeholder="Price"
                 />
               </FormGroup>
@@ -69,17 +75,14 @@ export default function Register() {
                   type="text"
                   value={slug}
                   onChange={(e) => setSlug(e.target.value)}
-                  id="exampleEmail"
                   placeholder="Slug"
                 />
-              </FormGroup>{' '}
+              </FormGroup>
               <br />
               <FormGroup>
-                <Input
-                  type="submit"
-                  className="btn-primary"
-                  value="Cadastrar"
-                />
+                <Button type="submit" className="btn-primary">
+                  Cadastrar
+                </Button>
               </FormGroup>
             </Form>
           </div>

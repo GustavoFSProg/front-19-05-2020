@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 import './style.css'
 import {
   Collapse,
@@ -29,12 +28,12 @@ export default function Header() {
           <Nav className="mr-auto" navbar>
             <NavItem>
               <NavLink href="/">
-                <text className="yellow-color">Home</text>
+                <span className="yellow-color">Home</span>
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/register">
-                <text className="yellow-color">Cadastro</text>
+                <span className="yellow-color">Cadastro</span>
               </NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
@@ -49,7 +48,7 @@ export default function Header() {
                 </DropdownItem>
                 <DropdownItem>
                   <NavLink href="/register">
-                    {'    '} <span className="fontes"> {'    '}Cadastro</span>
+                    <span className="fontes">Cadastro</span>
                   </NavLink>
                 </DropdownItem>
                 <DropdownItem divider />
