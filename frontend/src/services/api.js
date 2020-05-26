@@ -1,6 +1,9 @@
 import axios from 'axios'
+import dotenv from 'dotenv'
 
-axios.defaults.baseURL = 'http://localhost:4000/'
+dotenv.config()
+
+axios.defaults.baseURL = process.env.CREATE_REACT_APP_URL
 axios.interceptors.request.use(
   (config) => config,
   (error) => Promise.reject(error)
