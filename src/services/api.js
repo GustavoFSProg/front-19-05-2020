@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-axios.defaults.baseURL = 'http://localhost:4000/'
+axios.defaults.baseURL = 'https://api-19-05-2020.herokuapp.com/'
 axios.interceptors.request.use(
   (config) => config,
   (error) => Promise.reject(error)
@@ -24,13 +24,6 @@ axios.interceptors.request.use(
     return Promise.reject(error)
   }
 )
-
-export const getIncidentsByOngId = async (ongId) => {
-  // Passando o Id como parâmentro OK!
-  const data = await axios.get(`/profile/${ongId}`)
-
-  return data
-}
 
 const api = axios
 
