@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+
 import { useHistory } from 'react-router-dom'
 import './style.css'
 import {
@@ -31,7 +32,8 @@ export default function Header() {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink className="NavLink" onClick={() => history.push('/')}>
+
+             <NavLink className="NavLink" onClick={() => history.push('/')}>
                 <text className="yellow-color">Home</text>
               </NavLink>
             </NavItem>
@@ -41,6 +43,7 @@ export default function Header() {
                 onClick={() => history.push('/register')}
               >
                 <text className="yellow-color">Cadastro</text>
+
               </NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
@@ -57,10 +60,12 @@ export default function Header() {
                   </NavLink>
                 </DropdownItem>
                 <DropdownItem>
+
                   <NavLink
                     className="NavLink"
                     onClick={() => history.push('/register')}
                   >
+
                     <span className="fontes">Cadastro</span>
                   </NavLink>
                 </DropdownItem>
