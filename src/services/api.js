@@ -22,13 +22,6 @@ axios.interceptors.request.use(
   }
 )
 
-export const getIncidentsByOngId = async (ongId) => {
-  // Passando o Id como parâmentro OK!
-  const data = await axios.get(`/profile/${ongId}`)
-
-  return data
-}
-
 const api = axios
 
 export default api
