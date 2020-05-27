@@ -1,9 +1,6 @@
 import axios from 'axios'
-import dotenv from 'dotenv'
 
-dotenv.config()
-
-axios.defaults.baseURL = 'http://localhost:4000/'
+axios.defaults.baseURL = 'https://api-19-05-2020.herokuapp.com/'
 axios.interceptors.request.use(
   (config) => config,
   (error) => Promise.reject(error)

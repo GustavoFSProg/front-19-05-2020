@@ -10,7 +10,7 @@ export default function Products() {
   async function productsList() {
     try {
       const { data } = await api.get('/products')
-      setDados(data)
+      return setDados(data)
     } catch (error) {
       return error
     }
@@ -24,14 +24,16 @@ export default function Products() {
     <div>
       <Header />
       <br />
-      <br /> <br /> <br />
+      <br />
+      <br />
+      <br />
       <div className="container">
         <div className="row">
-          <div className="col-md-2"></div>
+          <div className="col-md-2" />
 
           <div className="col-md-8">
             <div align="center">
-              <h1 className="titulo">Website Products</h1>{' '}
+              <h1 className="titulo">Website Products</h1>
             </div>
             <br />
             <Table hover>

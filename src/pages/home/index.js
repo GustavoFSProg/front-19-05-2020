@@ -1,7 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import '../../style.css'
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap'
-import api from '../../services/api'
 import foto from '../../assets/pcs.png'
 import Header from '../../Header'
 
@@ -10,14 +8,16 @@ export default function Home() {
     <div>
       <Header />
       <br />
-      <br /> <br /> <br />
+      <br />
+      <br />
+      <br />
       <div className="container">
         <div className="row">
-          <div className="col-md-3"></div>
+          <div className="col-md-3" />
 
           <div className="col-md-4">
             <div align="center">
-              <h1 className="titulo">Website Products</h1>{' '}
+              <h1 className="titulo">Website Products</h1>
             </div>
             <br />
             <img width="150%" height=" 100%" src={foto} alt="inicio" />
