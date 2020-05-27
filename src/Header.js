@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+
+import { useHistory } from 'react-router-dom'
 import './style.css'
 import {
   Collapse,
@@ -6,8 +8,8 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
   NavLink,
+  NavItem,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
@@ -18,22 +20,30 @@ import {
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const toggle = () => setIsOpen(!isOpen)
+  const history = useHistory()
 
   return (
     <div>
       <Navbar className="green-color" dark expand="md">
-        <NavbarBrand href="/">GFS</NavbarBrand>
+        <NavbarBrand className="NavLink" onClick={() => history.push('/')}>
+          GFS
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/">
-                <span className="yellow-color">Home</span>
+
+             <NavLink className="NavLink" onClick={() => history.push('/')}>
+                <text className="yellow-color">Home</text>
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/register">
-                <span className="yellow-color">Cadastro</span>
+              <NavLink
+                className="NavLink"
+                onClick={() => history.push('/register')}
+              >
+                <text className="yellow-color">Cadastro</text>
+
               </NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
@@ -42,12 +52,20 @@ export default function Header() {
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
-                  <NavLink href="/products">
+                  <NavLink
+                    className="NavLink"
+                    onClick={() => history.push('/products')}
+                  >
                     <span className="fontes">Listagem</span>
                   </NavLink>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink href="/register">
+
+                  <NavLink
+                    className="NavLink"
+                    onClick={() => history.push('/register')}
+                  >
+
                     <span className="fontes">Cadastro</span>
                   </NavLink>
                 </DropdownItem>
