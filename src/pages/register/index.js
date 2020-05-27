@@ -79,7 +79,9 @@ export default function Register() {
                 />
               </FormGroup>
               <br />
-              <FormGroup></FormGroup>
+              <FormGroup>
+                <Button className="btn-primary">Cadastrar</Button>
+              </FormGroup>
             </Form>
           </div>
         </div>
